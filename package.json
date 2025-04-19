@@ -7,7 +7,7 @@
     "start": "node dist/main.js",
     "start:prod": "node dist/main.js",
     "build": "tsc",
-    "dev": "ts-node-dev --respawn src/main.ts",
+    "start:dev": "ts-node-dev --respawn --watch src/main.ts",
     "prisma:generate": "npx prisma generate",
     "prisma:migrate": "npx prisma migrate dev",
     "prisma:deploy": "npx prisma migrate deploy"

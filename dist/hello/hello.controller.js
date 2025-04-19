@@ -13,7 +13,7 @@ exports.HelloController = void 0;
 const common_1 = require("@nestjs/common");
 let HelloController = class HelloController {
     getHello() {
-        return "Hello World!";
+        return "Hellos Worlssd !!";
     }
 };
 exports.HelloController = HelloController;
