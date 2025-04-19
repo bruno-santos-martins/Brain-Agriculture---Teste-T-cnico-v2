@@ -1,0 +1,19 @@
+FROM node:20-bullseye
+
+WORKDIR /app
+
+# Instala dependências do sistema
+RUN apt-get update && apt-get install -y curl openssl libssl1.1 && apt-get clean
+
+# Instala dependências
+COPY package*.json ./
+RUN npm install
+
+# Copia o restante do projeto
+COPY . .
+
+# Gera Prisma Client
+RUN npx prisma generate
+
+# Comando para rodar com hot reload
+CMD ["npm", "run", "start:dev"]
