@@ -1,0 +1,29 @@
+import { Injectable } from '@nestjs/common';
+import { FarmerRepositoryPort } from '../application/ports/farmer.repository';
+import { Farmer } from '../domain/farmer.entity';
+import { PrismaService } from '../../../prisma/prisma.service';
+
+@Injectable()
+export class PrismaFarmerRepository implements FarmerRepositoryPort {
+  constructor(private readonly prisma: PrismaService) {}
+
+  create(data: Partial<Farmer>): Promise<Farmer> {
+    return this.prisma.farmer.create({ data }) as unknown as Promise<Farmer>;
+  }
+
+  findAll(): Promise<Farmer[]> {
+    return this.prisma.farmer.findMany() as unknown as Promise<Farmer[]>;
+  }
+
+  findOne(id: string): Promise<Farmer> {
+    return this.prisma.farmer.findUnique({ where: { id } }) as unknown as Promise<Farmer>;
+  }
+
+  update(id: string, data: Partial<Farmer>): Promise<Farmer> {
+    return this.prisma.farmer.update({ where: { id }, data }) as unknown as Promise<Farmer>;
+  }
+
+  async delete(id: string): Promise<void> {
+    await this.prisma.farmer.delete({ where: { id } });
+  }
+}
