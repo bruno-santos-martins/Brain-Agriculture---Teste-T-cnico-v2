@@ -33,5 +33,5 @@ COPY --from=build /app/package*.json ./
 COPY --from=build /app/dist ./dist
 COPY --from=build /app/prisma ./prisma
 
-#CMD ["node", "dist/main"]
-CMD ["npm", "run", "start:dev"]
+CMD ["node", "dist/main"]
+#CMD ["npm", "run", "start:dev"]

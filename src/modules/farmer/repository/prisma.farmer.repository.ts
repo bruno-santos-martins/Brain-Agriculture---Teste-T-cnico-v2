@@ -11,8 +11,8 @@ export class PrismaFarmerRepository implements FarmerRepositoryPort {
     return this.prisma.farmer.create({ data }) as unknown as Promise<Farmer>;
   }
 
-  findAll(): Promise<Farmer[]> {
-    return this.prisma.farmer.findMany() as unknown as Promise<Farmer[]>;
+  async findAll(): Promise<Farmer[]> {
+    return await this.prisma.farmer.findMany();
   }
 
   findOne(id: string): Promise<Farmer> {

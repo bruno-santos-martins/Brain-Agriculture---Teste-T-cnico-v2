@@ -5,7 +5,7 @@ import { Farmer } from '../../domain/farmer.entity';
 @Injectable()
 export class FindAllFarmersUseCase {
   constructor(private readonly repository: FarmerRepositoryPort) {}
-  execute(): Promise<Farmer[]> {
-    return this.repository.findAll();
+  async execute(): Promise<Farmer[]> {
+    return await this.repository.findAll();
   }
 }

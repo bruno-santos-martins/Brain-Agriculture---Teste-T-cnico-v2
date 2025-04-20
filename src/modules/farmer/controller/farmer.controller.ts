@@ -5,6 +5,8 @@ import { FindOneFarmerUseCase } from '../application/use-cases/find-one-farmer.u
 import { UpdateFarmerUseCase } from '../application/use-cases/update-farmer.use-case';
 import { DeleteFarmerUseCase } from '../application/use-cases/delete-farmer.use-case';
 import { Farmer } from '../domain/farmer.entity';
+import { CreateFarmerDto } from '../application/dto/create-farmer.dto';
+
 
 @Controller('farmers')
 export class FarmerController {
@@ -17,13 +19,13 @@ export class FarmerController {
   ) {}
 
   @Post()
-  create(@Body() data: Partial<Farmer>) {
+  create(@Body() data: CreateFarmerDto ) {
     return this.createUseCase.execute(data);
   }
 
   @Get()
-  findAll() {
-    return this.findAllUseCase.execute();
+  async findAll() {
+    return await this.findAllUseCase.execute();
   }
 
   @Get(':id')
