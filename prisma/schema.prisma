@@ -25,7 +25,7 @@ model Farm {
   totalArea         Float
   agriculturalArea  Float
   vegetationArea    Float
-  farmerId          String
+  farmerId          String 
   farmer            Farmer    @relation(fields: [farmerId], references: [id])
   harvests          Harvest[]
   createdAt         DateTime  @default(now())

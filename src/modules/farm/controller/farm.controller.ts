@@ -4,8 +4,8 @@ import { FindAllFarmsUseCase } from '../application/use-cases/find-all-farms.use
 import { FindOneFarmUseCase } from '../application/use-cases/find-one-farm.use-case';
 import { UpdateFarmUseCase } from '../application/use-cases/update-farm.use-case';
 import { DeleteFarmUseCase } from '../application/use-cases/delete-farm.use-case';
-import { CreateFarmDto } from '../application/use-cases/create-farm.dto';
-import { UpdateFarmDto } from '../application/use-cases/update-farm.dto';
+import { CreateFarmDto } from '../application/dto/create-farm.dto';
+import { UpdateFarmDto } from '../application/dto/update-farm.dto';
 
 @Controller('farms')
 export class FarmController {

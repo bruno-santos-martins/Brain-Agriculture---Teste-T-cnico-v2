@@ -1,10 +1,8 @@
-// Arquivo: src/modules/farmer/domain/farmer.entity.ts
-
-export class Farmer {
+export class Harvest {
   constructor(
     public id: string,
     public name: string,
-    public cpfCnpj: string,
+    public farmId: string,
     public createdAt: Date,
     public updatedAt: Date
   ) {}
