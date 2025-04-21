@@ -19,8 +19,8 @@ export class PrismaFarmerRepository implements FarmerRepositoryPort {
     return this.prisma.farmer.findUnique({ where: { id } }) as unknown as Promise<Farmer>;
   }
 
-  update(id: string, data: Partial<Farmer>): Promise<Farmer> {
-    return this.prisma.farmer.update({ where: { id }, data }) as unknown as Promise<Farmer>;
+  async update(id: string, data: Partial<Farmer>) {
+    return await this.prisma.farmer.update({ where: { id }, data });
   }
 
   async delete(id: string): Promise<void> {

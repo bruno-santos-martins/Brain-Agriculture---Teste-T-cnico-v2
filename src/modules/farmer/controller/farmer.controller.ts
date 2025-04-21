@@ -34,7 +34,7 @@ export class FarmerController {
   }
 
   @Put(':id')
-  update(@Param('id') id: string, @Body() data: Partial<Farmer>) {
+  update(@Param('id') id: string, @Body() data: CreateFarmerDto) {
     return this.updateUseCase.execute(id, data);
   }
 
