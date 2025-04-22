@@ -10,17 +10,22 @@
     "start:dev": "ts-node-dev --respawn --transpile-only src/main.ts",
     "prisma:generate": "npx prisma generate",
     "prisma:migrate": "npx prisma migrate dev",
-    "prisma:deploy": "npx prisma migrate deploy"
+    "prisma:deploy": "npx prisma migrate deploy",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.0",
     "@nestjs/core": "^11.0.0",
     "@nestjs/platform-express": "^11.0.0",
     "@nestjs/swagger": "^11.1.4",
+    "@nestjs/testing": "^11.0.20",
     "@prisma/client": "^6.6.0",
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "swagger-ui-express": "^5.0.1"
+    "swagger-ui-express": "^5.0.1",
+    "ts-jest": "^29.3.2"
   },
   "devDependencies": {
     "prisma": "^6.6.0",

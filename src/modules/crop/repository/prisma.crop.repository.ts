@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../../prisma/prisma.service';
-import { Crop } from '../../domain/crop.entity';
+import { Crop } from '../../../../domain/crop.entity';
 import { CropRepositoryPort } from '../../application/ports/crop.repository';
 
 @Injectable()
