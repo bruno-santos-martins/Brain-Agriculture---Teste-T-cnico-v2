@@ -13,7 +13,7 @@ describe('CreateFarmerUseCase', () => {
   });
 
   it('should create a farmer', async () => {
-    const input = { name: 'João da Silva', cpfCnpj: '12345678900' };
+    const input = { name: 'João da Silva', cpfCnpj: '14706663750' };
     const expected = new Farmer('uuid', input.name, input.cpfCnpj, new Date(), new Date());
     (repository.create as jest.Mock).mockResolvedValue(expected);
 

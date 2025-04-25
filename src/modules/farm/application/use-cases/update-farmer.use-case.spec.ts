@@ -1,6 +1,6 @@
-import { UpdateFarmerUseCase } from './update-farmer.use-case';
-import { FarmerRepositoryPort } from '../ports/farmer.repository';
-import { Farmer } from '../../domain/farmer.entity';
+import { FarmerRepositoryPort } from "src/modules/farmer/application/ports/farmer.repository";
+import { UpdateFarmerUseCase } from "src/modules/farmer/application/use-cases/update-farmer.use-case";
+import { Farmer } from "src/modules/farmer/domain/farmer.entity";
 
 describe('UpdateFarmerUseCase', () => {
   let useCase: UpdateFarmerUseCase;

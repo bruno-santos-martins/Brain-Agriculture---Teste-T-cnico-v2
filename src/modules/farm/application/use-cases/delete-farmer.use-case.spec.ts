@@ -1,5 +1,5 @@
-import { DeleteFarmerUseCase } from './delete-farmer.use-case';
-import { FarmerRepositoryPort } from '../ports/farmer.repository';
+import { FarmerRepositoryPort } from "src/modules/farmer/application/ports/farmer.repository";
+import { DeleteFarmerUseCase } from "src/modules/farmer/application/use-cases/delete-farmer.use-case";
 
 describe('DeleteFarmerUseCase', () => {
   let useCase: DeleteFarmerUseCase;

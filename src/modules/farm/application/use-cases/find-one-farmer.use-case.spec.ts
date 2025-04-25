@@ -1,6 +1,8 @@
-import { FindOneFarmerUseCase } from './find-one-farmer.use-case';
-import { FarmerRepositoryPort } from '../ports/farmer.repository';
-import { Farmer } from '../../domain/farmer.entity';
+
+
+import { FarmerRepositoryPort } from 'src/modules/farmer/application/ports/farmer.repository';
+import { FindOneFarmerUseCase } from 'src/modules/farmer/application/use-cases/find-one-farmer.use-case';
+import { Farmer } from 'src/modules/farmer/domain/farmer.entity';
 
 describe('FindOneFarmerUseCase', () => {
   let useCase: FindOneFarmerUseCase;
