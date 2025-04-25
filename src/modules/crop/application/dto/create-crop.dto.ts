@@ -2,8 +2,8 @@ import { ApiProperty } from '@nestjs/swagger';
 
 export class CreateCropDto {
   @ApiProperty({ example: 'Milho' })
-  name: string;
+  name!: string;
 
   @ApiProperty({ example: 'uuid-of-harvest' })
-  harvestId: string;
+  harvestId: string | undefined;
 }
