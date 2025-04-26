@@ -4,8 +4,8 @@ import { FindAllHarvestsUseCase } from '../application/use-cases/find-all-harves
 import { FindOneHarvestUseCase } from '../application/use-cases/find-one-harvest.use-case';
 import { UpdateHarvestUseCase } from '../application/use-cases/update-harvest.use-case';
 import { DeleteHarvestUseCase } from '../application/use-cases/delete-harvest.use-case';
-import { CreateHarvestDto } from '../application/use-cases/create-harvest.dto';
-import { UpdateHarvestDto } from '../application/use-cases/update-harvest.dto';
+import { CreateHarvestDto } from '../application/dto/create-harvest.dto';
+import { UpdateHarvestDto } from '../application/dto/update-harvest.dto';
 
 @Controller('harvests')
 export class HarvestController {

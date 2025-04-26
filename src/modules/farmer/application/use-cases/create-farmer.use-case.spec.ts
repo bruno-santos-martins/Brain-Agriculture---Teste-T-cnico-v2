@@ -73,4 +73,3 @@ describe('CreateFarmerUseCase', () => {
     expect(repository.create).not.toHaveBeenCalled();
   });
 });
-g
