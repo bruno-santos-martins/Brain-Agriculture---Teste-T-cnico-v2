@@ -8,6 +8,8 @@ import { UpdateFarmUseCase } from './application/use-cases/update-farm.use-case'
 import { DeleteFarmUseCase } from './application/use-cases/delete-farm.use-case';
 import { FarmRepositoryPort } from './application/ports/farm.repository';
 import { PrismaFarmRepository } from './repository/prisma.farm.repository';
+import { DashboardFarmsUseCase } from './application/use-cases/dashboard-farms.use-case';
+         
 
 @Module({
   controllers: [FarmController],
@@ -42,6 +44,11 @@ import { PrismaFarmRepository } from './repository/prisma.farm.repository';
       useFactory: (repo: FarmRepositoryPort) => new DeleteFarmUseCase(repo),
       inject: [FarmRepositoryPort],
     },
+    {
+      provide: DashboardFarmsUseCase,
+      useFactory: (repo: FarmRepositoryPort) => new DashboardFarmsUseCase(repo),
+      inject: [FarmRepositoryPort],
+    },
   ],
   exports: [
     CreateFarmUseCase,
@@ -49,6 +56,7 @@ import { PrismaFarmRepository } from './repository/prisma.farm.repository';
     FindOneFarmUseCase,
     UpdateFarmUseCase,
     DeleteFarmUseCase,
+    DashboardFarmsUseCase,
   ],
 })
 export class FarmModule {}

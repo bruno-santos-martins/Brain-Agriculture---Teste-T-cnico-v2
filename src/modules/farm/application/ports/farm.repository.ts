@@ -6,4 +6,5 @@ export abstract class FarmRepositoryPort {
   abstract findOne(id: string): Promise<Farm>;
   abstract update(id: string, data: Partial<Farm>): Promise<Farm>;
   abstract delete(id: string): Promise<void>;
+  abstract findResume(): Promise<any>;
 }

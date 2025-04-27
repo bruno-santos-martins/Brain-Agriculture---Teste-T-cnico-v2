@@ -6,6 +6,7 @@ import { UpdateFarmUseCase } from '../application/use-cases/update-farm.use-case
 import { DeleteFarmUseCase } from '../application/use-cases/delete-farm.use-case';
 import { CreateFarmDto } from '../application/dto/create-farm.dto';
 import { UpdateFarmDto } from '../application/dto/update-farm.dto';
+import { DashboardFarmsUseCase } from '../application/use-cases/dashboard-farms.use-case';
 
 @Controller('farms')
 export class FarmController {
@@ -15,6 +16,8 @@ export class FarmController {
     private readonly findOneFarm: FindOneFarmUseCase,
     private readonly updateFarm: UpdateFarmUseCase,
     private readonly deleteFarm: DeleteFarmUseCase,
+    private readonly dashboardFarm: DashboardFarmsUseCase,
+
   ) {}
 
   @Post()
@@ -22,16 +25,22 @@ export class FarmController {
     return this.createFarm.execute(data);
   }
 
+  
   @Get()
   findAll() {
     return this.findAllFarms.execute();
   }
 
+  @Get('/dashboard')
+  dashboard() {
+    return this.dashboardFarm.execute();
+  }
+  
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.findOneFarm.execute(id);
   }
-
+  
   @Put(':id')
   update(@Param('id') id: string, @Body() data: UpdateFarmDto) {
     return this.updateFarm.execute(id, data);
