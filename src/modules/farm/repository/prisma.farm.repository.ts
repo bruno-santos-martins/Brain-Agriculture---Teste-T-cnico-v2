@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../../prisma/prisma.service';
-import { Farm } from '../../domain/farm.entity';
-import { FarmRepositoryPort } from '../../application/ports/farm.repository';
+import { FarmRepositoryPort } from '../application/ports/farm.repository';
+import { Farm } from '@prisma/client';
 
 @Injectable()
 export class PrismaFarmRepository implements FarmRepositoryPort {
@@ -66,7 +66,6 @@ export class PrismaFarmRepository implements FarmRepositoryPort {
       },
     }
   }
-
 
   async findOne(id: string): Promise<Farm> {
     return this.prisma.farm.findUnique({ where: { id } }) as unknown as Farm;
