@@ -13,7 +13,6 @@ Ele é uma aplicação **NestJS** utilizando **arquitetura hexagonal (ports & ad
 - [Como Executar o Projeto](#como-executar-o-projeto)
 - [Principais Funcionalidades](#principais-funcionalidades)
 - [Documentação da API](#documentação-da-api)
-- [Observabilidade](#observabilidade)
 - [Autor](#autor)
 
 ---
@@ -62,7 +61,6 @@ A aplicação segue o modelo de **Arquitetura Hexagonal** (Ports and Adapters), 
 - **Docker** e **Docker Compose** (Containerização)
 - **Swagger** (Documentação da API)
 - **Jest** (Testes unitários)
-- **Prometheus + Grafana** (Observabilidade - opcional)
 
 ---
 
